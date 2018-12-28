@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Image, Dimensions, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Image, Dimensions, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
 import bgImage from './assets/img/bg.jpg';
 import bqlogo from './assets/img/logo.png';
 
@@ -20,48 +20,56 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <ImageBackground source={bgImage} style={styles.BackgroundContainer}>
+      <KeyboardAvoidingView style={styles.Container} behavior="padding">
+      <ImageBackground source={bgImage} style={styles.Background} >
 
-       <View style={styles.logoContainerView}>
+        <View style={styles.logoContainerView}>
+          <Image source={bqlogo} style={styles.Logo}/>
+          <Text style={styles.LogoText}>Historia, Cultura y Sociedad</Text>
+        </View>
 
-         <Image source={bqlogo} style={styles.Logo}/>
-         <Text style={styles.LogoText}>Historia, Cultura y Sociedad</Text>
-       </View>
-
-       <View style={styles.InputContainer}>
-         <Ionicons name='ios-person' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
-         <TextInput 
+        <View style={styles.InputContainer}>
+          <Ionicons name='ios-person' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
+          <TextInput 
           style={styles.Input} 
           placeholder={'Usuario o Email'}
           placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-          underlineColorAndroid='transparent' 
+          underlineColorAndroid='transparent'
+          autoCorrect={false}
+          autoFocus 
         />
-       </View>
+        </View>
 
-       <View style={styles.InputContainer}>
-       <Ionicons name='ios-lock' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
-         <TextInput style={styles.Input} 
-         placeholder={'Password'}
-         secureTextEntry={this.state.showPass}
-         placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-         underlineColorAndroid='transparent' />
-       </View>
+        <View style={styles.InputContainer}>
+        <Ionicons name='ios-lock' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
+          <TextInput style={styles.Input} 
+          placeholder={'Password'}
+          secureTextEntry={true}
+          placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+          underlineColorAndroid='transparent' />
+        </View>
 
-       <TouchableOpacity style={styles.btnIniciar}>
+        <TouchableOpacity style={styles.btnIniciar}>
           <Text style={styles.Text}>Iniciar seccion</Text>
-       </TouchableOpacity>
+        </TouchableOpacity>
 
-       <TouchableOpacity style={styles.btnRegistro}>
+        <TouchableOpacity style={styles.btnRegistro}>
           <Text style={styles.Text}>Registrar</Text>
-       </TouchableOpacity>
+        </TouchableOpacity>
         
-      </ImageBackground>
+        </ImageBackground>
+      </KeyboardAvoidingView>
+
     );
   }
 }
 
 const styles = StyleSheet.create({
-  BackgroundContainer: {
+    Container: {
+    flex: 1,
+  },
+
+  Background: {
     flex: 1,
     width: null,
     height: null,
