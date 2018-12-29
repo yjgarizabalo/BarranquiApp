@@ -1,21 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, TouchableOpacity, KeyboardAvoidingView, TextInput, Ionicons} from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, TouchableOpacity, KeyboardAvoidingView,} from 'react-native';
 import bgImage from './assets/img/bg.jpg'
 import bqlogo from './assets/img/logo.png'
-import { Ionicons } from '@expo/vector-icons'
-import { TextInput } from 'react-native-gesture-handler'
-//import InfoInput from './src/componets/InfoInput'
+
+//--------------------------------------------------------
+
+import InfoInput from './src/componets/InfoInput'
 
 
 const {width: WIDTH} = Dimensions.get('window')
 export default class App extends React.Component {
-  constructor() {
-     super()
-     this.state = {
-       ShowPass: true,
-       press: false
-     }
-  }
   render() {
     return (
       <KeyboardAvoidingView style={styles.Container} behavior="padding">
@@ -25,28 +19,10 @@ export default class App extends React.Component {
           <Image source={bqlogo} style={styles.Logo}/>
           <Text style={styles.LogoText}>Historia, Cultura y Sociedad</Text>
         </View>
-        <View style={styles.InputContainer}>
-          <Ionicons name='ios-person' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
-          <TextInput 
-          style={styles.Input} 
-          placeholder={'Usuario o Email'}
-          placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-          underlineColorAndroid='transparent'
-          autoCorrect={false}
-          autoFocus 
-        />
-        </View>
 
-        <View style={styles.InputContainer}>
-        <Ionicons name='ios-lock' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
-          <TextInput style={styles.Input} 
-          placeholder={'Password'}
-          secureTextEntry={true}
-          placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-          underlineColorAndroid='transparent' />
-        </View>
+        <InfoInput/>
         <TouchableOpacity style={styles.btnIniciar}>
-          <Text style={styles.Text}>Iniciar seccion</Text>
+          <Text style={styles.Text}>Iniciar sesión</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.btnRegistro}>
@@ -121,27 +97,6 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
 
-  InputContainer: {
-    marginTop: 10,
-    flexDirection: 'row'
-  },
-
-  Input: {
-    width: WIDTH - 55,
-    height: 45,
-    borderRadius: 25,
-    fontSize: 15,
-    paddingLeft: 45,
-    backgroundColor: 'rgba(0, 0, 0, 0.35)',
-    color: 'rgba(255, 255, 255, 0.7)',
-    marginHorizontal: 25,
-  },
-
-  inpuntIcon:{
-    position: 'absolute',
-    top: 7,
-    left: 38
-  },
 });
 
 /* 
@@ -167,5 +122,13 @@ btneyes {
   left: 37 
 
 }
+
+constructor() {
+  super()
+  this.state = {
+    ShowPass: true,
+    press: false
+  }
+ }
 
 */

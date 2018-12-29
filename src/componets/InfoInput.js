@@ -1,19 +1,48 @@
 'use strict'
 
+import React from 'react'
+import {StyleSheet ,Dimensions, View} from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
+import { TextInput } from 'react-native-gesture-handler'
 
-
-
-/*
+const {width: WIDTH} = Dimensions.get('window')
 
 function InfoInput() {
-        
+    return(
+      <View style={styles.InputContainer}>
+          <View style={styles.InputContainer}>
+          <Ionicons name='ios-person' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
+          <TextInput 
+          style={styles.Input} 
+          placeholder={'Usuario o Email'}
+          placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+          underlineColorAndroid='transparent'
+          autoCorrect={false}
+          autoFocus 
+          />
+          </View>
+        <View style={styles.InputContainer}>
+        <Ionicons name='ios-lock' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
+          <TextInput style={styles.Input} 
+          placeholder={'Password'}
+          secureTextEntry={true}
+          placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+          underlineColorAndroid='transparent' 
+          />
+        </View>
 
+      </View>
+    )   
 }
 
 const styles = StyleSheet.create({
     InputContainer: {
-        marginTop: 10,
-        flexDirection: 'row'
+       flexDirection: 'column',
+       marginTop: 10,
+      },
+
+      InputTex: {
+        
       },
     
       Input: {
@@ -36,4 +65,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default InfoInput */
+export default InfoInput 
