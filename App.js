@@ -1,15 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Image, Dimensions, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
-import bgImage from './assets/img/bg.jpg';
-import bqlogo from './assets/img/logo.png';
+import { StyleSheet, Text, View, ImageBackground, Dimensions, Image, TouchableOpacity, KeyboardAvoidingView, TextInput, Ionicons} from 'react-native';
+import bgImage from './assets/img/bg.jpg'
+import bqlogo from './assets/img/logo.png'
+import { Ionicons } from '@expo/vector-icons'
+import { TextInput } from 'react-native-gesture-handler'
+//import InfoInput from './src/componets/InfoInput'
 
-
-//-----------------------------------------------------------------//
-import { TextInput } from 'react-native-gesture-handler';
-import { Ionicons } from '@expo/vector-icons';
 
 const {width: WIDTH} = Dimensions.get('window')
-
 export default class App extends React.Component {
   constructor() {
      super()
@@ -27,7 +25,6 @@ export default class App extends React.Component {
           <Image source={bqlogo} style={styles.Logo}/>
           <Text style={styles.LogoText}>Historia, Cultura y Sociedad</Text>
         </View>
-
         <View style={styles.InputContainer}>
           <Ionicons name='ios-person' size={28} color={'rgba(255, 255, 255, 0.7)'} style={styles.inpuntIcon}/>
           <TextInput 
@@ -48,7 +45,6 @@ export default class App extends React.Component {
           placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
           underlineColorAndroid='transparent' />
         </View>
-
         <TouchableOpacity style={styles.btnIniciar}>
           <Text style={styles.Text}>Iniciar seccion</Text>
         </TouchableOpacity>
@@ -96,21 +92,6 @@ const styles = StyleSheet.create({
     opacity: 0.8,
   },
 
-  InputContainer: {
-    marginTop: 10,
-    flexDirection: 'row'
-  },
-
-  Input: {
-    width: WIDTH - 55,
-    height: 45,
-    borderRadius: 25,
-    fontSize: 15,
-    paddingLeft: 45,
-    backgroundColor: 'rgba(0, 0, 0, 0.35)',
-    color: 'rgba(255, 255, 255, 0.7)',
-    marginHorizontal: 25,
-  },
 
 
   btnIniciar: {
@@ -140,13 +121,27 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
 
+  InputContainer: {
+    marginTop: 10,
+    flexDirection: 'row'
+  },
+
+  Input: {
+    width: WIDTH - 55,
+    height: 45,
+    borderRadius: 25,
+    fontSize: 15,
+    paddingLeft: 45,
+    backgroundColor: 'rgba(0, 0, 0, 0.35)',
+    color: 'rgba(255, 255, 255, 0.7)',
+    marginHorizontal: 25,
+  },
+
   inpuntIcon:{
     position: 'absolute',
     top: 7,
     left: 38
   },
-
-
 });
 
 /* 
