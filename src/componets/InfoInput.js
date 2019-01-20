@@ -1,9 +1,8 @@
 'use strict'
 
 import React from 'react'
-import {StyleSheet ,Dimensions, View} from 'react-native'
+import {StyleSheet ,Dimensions, View, TextInput} from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { TextInput } from 'react-native-gesture-handler'
 
 const {width: WIDTH} = Dimensions.get('window')
 
